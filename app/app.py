@@ -4,6 +4,22 @@ import pandas as pd
 # Konfigurasi Halaman (Wajib di baris paling atas)
 st.set_page_config(page_title="SHIELD - Dashboard Prediksi Depresi", page_icon="🛡️", layout="wide")
 
+st.markdown("""
+<style>
+    /* Footer credit tim */
+    .credit-footer {
+        text-align: center;
+        font-size: 0.82rem;
+        color: rgba(148,163,184,0.85);
+        margin-top: 1.2rem;
+        padding-top: 1rem;
+    }
+    .credit-footer b {
+        color: inherit;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # ==========================================
 # HEADER & INFORMASI TIM
 # ==========================================
@@ -80,3 +96,20 @@ st.markdown("""
 """)
 
 st.success("👈 Silakan buka sidebar di sebelah kiri untuk mulai menjalankan aplikasi!")
+
+# keterangan di sidebar
+with st.sidebar:
+    st.caption(
+        "⚠️ Alat ini bersifat skrining awal dan **bukan pengganti** "
+        "diagnosis profesional. Hasil harus ditindaklanjuti oleh tenaga "
+        "kesehatan mental yang berkompeten."
+    )
+
+
+# FOOTER
+st.markdown("""
+<div class="credit-footer">
+    Dikembangkan oleh <b>Tim SHIELD</b> — Deteksi Dini Depresi berbasis Machine Learning<br>
+    © 2026 SHIELD Team. Seluruh hak cipta dilindungi.
+</div>
+""", unsafe_allow_html=True)

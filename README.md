@@ -7,12 +7,13 @@ This project was developed as part of a Machine Learning research project by mod
 
 ---
 
-## 👨‍💻 Project Members
+## 👥 Project Team
 
-| Name | Role |
-|------|------|
-| **[Aisyah Nurul .S](https://github.com/arluxsho)** | Machine Learning & Application Developer |
-| **[Calista Salsabila](https://github.com/calistasalsabila)** | Machine Learning & Application Developer |
+SHIELD is the result of a collaborative effort between **[Calista Salsabila](https://github.com/calistasalsabila)** and **[Aisyah Nurul Sholikhah](https://github.com/arluxsho)**, developed as the final project for the Artificial Intelligence Class.
+
+Rather than dividing responsibilities into separate roles, we worked together across every aspect of the project—from research and data analysis to machine learning model development, explainable AI implementation, web application development, deployment, and documentation.
+
+This collaborative approach allowed us to combine our ideas and technical skills to build an end-to-end AI solution that is accurate, interpretable, and ready for real-world deployment.
 
 ---
 
@@ -40,7 +41,9 @@ Depression is one of the most common mental health issues experienced by univers
 
 SHIELD was developed to provide an **early screening tool** capable of predicting depression risk using Machine Learning while maintaining transparency through Explainable Artificial Intelligence (XAI).
 
-Unlike conventional prediction systems that only produce classification results, SHIELD also explains **why** a prediction is made, allowing users to better understand the contributing factors.
+Unlike conventional prediction systems that only produce classification results, SHIELD also explains **why** a prediction is made, allowing users to better understand the contributing factors behind each prediction.
+
+It is important to note that **SHIELD is not intended to replace professional psychological or psychiatric assessments**. The application serves solely as an **early screening and decision-support tool** based on machine learning predictions. Any indication of depression should be followed by consultation with qualified mental health professionals for proper diagnosis and treatment.
 
 ---
 
@@ -50,7 +53,6 @@ Unlike conventional prediction systems that only produce classification results,
 - 🌳 Random Forest Classification
 - 🔍 SHAP Explainable AI
 - 📊 Feature Importance Visualization
-- ⚡ FastAPI Prediction API
 - 🌐 Interactive Streamlit Dashboard
 - 📈 Early Mental Health Screening
 
@@ -68,7 +70,6 @@ The dataset contains demographic, academic, lifestyle, and mental health attribu
 
 ### Features
 
-- Gender
 - Age
 - Academic Pressure
 - Study Satisfaction
@@ -77,7 +78,6 @@ The dataset contains demographic, academic, lifestyle, and mental health attribu
 - Have You Ever Had Suicidal Thoughts?
 - Study Hours
 - Financial Stress
-- Family History of Mental Illness
 
 Target Variable
 
@@ -197,12 +197,6 @@ Install dependencies
 pip install -r requirements.txt
 ```
 
-Run FastAPI
-
-```bash
-uvicorn api:app --reload
-```
-
 Run Streamlit
 
 ```bash
@@ -245,9 +239,21 @@ Potential future improvements include:
 
 ---
 
-## 📚 Citation
+## 📚 Research Foundation
 
-If you use this project or reference this work, please cite the accompanying research paper.
+SHIELD is an extension of the research conducted by **Risqi et al. (2025)** on student depression classification.
+
+The original study evaluated the performance of **Decision Tree** and **Support Vector Machine (SVM)** algorithms for predicting student depression. In this project, we further developed the proposed methodology by replacing the classification model with **Random Forest**, integrating **SHAP (SHapley Additive exPlanations)** for feature selection and model interpretability, applying **Stratified 5-Fold Cross Validation** for robust evaluation, and deploying the solution as an Explainable AI web application named **SHIELD**.
+
+These enhancements aim to improve model interpretability, reduce feature dimensionality, and provide a practical tool for early depression screening among university students.
+
+### Original Research
+
+Risqi, M.K., Prastya, I.W.D., & Vikri, M.J. (2025). *Comparison of Decision Tree Algorithms and Support Vector Machine (SVM) in Depression Classification in Students.* Eduvest – Journal of Universal Studies, 5(4).
+
+📄 **Journal Article:**  
+
+https://eduvest.greenvest.co.id/index.php/edv/article/view/51108
 
 ---
 

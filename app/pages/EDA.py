@@ -3,6 +3,22 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+st.markdown("""
+<style>
+    /* Footer credit tim */
+    .credit-footer {
+        text-align: center;
+        font-size: 0.82rem;
+        color: rgba(148,163,184,0.85);
+        margin-top: 1.2rem;
+        padding-top: 1rem;
+    }
+    .credit-footer b {
+        color: inherit;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # Konfigurasi Halaman
 st.set_page_config(page_title="Exploratory Data Analysis", page_icon="📊", layout="wide")
 
@@ -20,6 +36,14 @@ st.divider()
 
 # Menggunakan Tabs agar tampilan jauh lebih rapi
 tab1, tab2, tab3, tab4 = st.tabs(["📋 Overview Data", "🎯 Distribusi Target", "📈 Fitur Numerik", "📊 Fitur Kategorikal"])
+
+# keterangan di sidebar
+with st.sidebar:
+    st.caption(
+        "⚠️ Alat ini bersifat skrining awal dan **bukan pengganti** "
+        "diagnosis profesional. Hasil harus ditindaklanjuti oleh tenaga "
+        "kesehatan mental yang berkompeten."
+    )
 
 # ==========================================
 # TAB 1: OVERVIEW DATA
@@ -93,3 +117,11 @@ with tab4:
     fig_cat.delaxes(axes_cat[-1]) # Hapus kotak grafik terakhir yang kosong
     plt.tight_layout()
     st.pyplot(fig_cat)
+
+# FOOTER
+st.markdown("""
+<div class="credit-footer">
+    Dikembangkan oleh <b>Tim SHIELD</b> — Deteksi Dini Depresi berbasis Machine Learning<br>
+    © 2026 SHIELD Team. Seluruh hak cipta dilindungi.
+</div>
+""", unsafe_allow_html=True)

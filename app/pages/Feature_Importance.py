@@ -5,6 +5,22 @@ import shap
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 
+st.markdown("""
+<style>
+    /* Footer credit tim */
+    .credit-footer {
+        text-align: center;
+        font-size: 0.82rem;
+        color: rgba(148,163,184,0.85);
+        margin-top: 1.2rem;
+        padding-top: 1rem;
+    }
+    .credit-footer b {
+        color: inherit;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # Konfigurasi Halaman
 st.set_page_config(page_title="Feature Importance", page_icon="⭐", layout="wide")
 
@@ -45,6 +61,14 @@ def compute_shap():
         shap_values_target = shap_values
         
     return X, explainer, shap_values_target
+
+# keterangan di sidebar
+with st.sidebar:
+    st.caption(
+        "⚠️ Alat ini bersifat skrining awal dan **bukan pengganti** "
+        "diagnosis profesional. Hasil harus ditindaklanjuti oleh tenaga "
+        "kesehatan mental yang berkompeten."
+    )
 
 # Eksekusi fungsi cache
 X, explainer, shap_values_target = compute_shap()
@@ -107,3 +131,12 @@ with tab2:
         else:
             with col_feat2:
                 st.success(f"**{i+1}. {feature}**")
+
+
+# FOOTER
+st.markdown("""
+<div class="credit-footer">
+    Dikembangkan oleh <b>Tim SHIELD</b> — Deteksi Dini Depresi berbasis Machine Learning<br>
+    © 2026 SHIELD Team. Seluruh hak cipta dilindungi.
+</div>
+""", unsafe_allow_html=True)
